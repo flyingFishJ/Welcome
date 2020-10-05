@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>710</w>
+      <h>620</h>
+    </coordinates>
+    <panel_attributes>assignment3_Jianchuan_Li::Library
+--
+-libBook = new ArrayList&lt;Book&gt;(): ArrayList&lt;Book&gt;
+-libCustomer = new ArrayList&lt;Customer&gt;(): ArrayList&lt;Customer&gt;
+-libBookLoan = new ArrayList&lt;BookLoan&gt;(): ArrayList&lt;BookLoan&gt;
++TODAY = Calendar.getInstance(): Calendar
+-CHANGE_CUSTOMER = 1: int
+-CHANGE_BOOK = 2: int
+-LOAN_BOOK = 3: int
+-DISPLAY_CUSTOMERWITHLOAN = 4: int
+-DISPLAY_CUSTOMERWITHFINE = 5: int
+-DISPLAY_CHECKOUTBOOK = 6: int
+-DISPLAY_OVERDUELOAN = 7: int
+-EXIT = 0: int
+~input = new Scanner(System.in): Scanner
+--
++Library(ArrayList&lt;Book&gt; libBook, ArrayList&lt;Customer&gt; libCustomer, ArrayList&lt;BookLoan&gt; libBookLoan): ctor
++getLibBook(): ArrayList&lt;Book&gt;
++setLibBook(ArrayList&lt;Book&gt; libBook): void
++getLibCustomer(): ArrayList&lt;Customer&gt;
++setLibCustomer(ArrayList&lt;Customer&gt; libCustomer): void
++getLibBookLoan(): ArrayList&lt;BookLoan&gt;
++setLibBookLoan(ArrayList&lt;BookLoan&gt; libBookLoan): void
++launch(): void
+-displayMenu(): int
+-executeMenuItem(int num): void
+-changeCustomer(): boolean
+-addCustomer(): boolean
+-changeAddress(): boolean
+-removeCustomer(): boolean
+-changeBook(): boolean
+-addBook(): boolean
+-removeBook(): boolean
+-checkLoanBook(Book book): boolean
+-checkLoanBook(Customer customer): boolean
++borrow(Customer customer, Book book, String date): boolean
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>870</x>
+      <y>330</y>
+      <w>430</w>
+      <h>310</h>
+    </coordinates>
+    <panel_attributes>assignment3_Jianchuan_Li::BookLoan
+--
+-book: Book
+-customer: Customer
+-dueDate: Date
+-fine: double
+-dateFormat = new SimpleDateFormat("yyyy-MM-dd"): DateFormat
+--
++BookLoan(Customer customer, Book book, String date): ctor
++getBook(): Book
++setBook(Book book): void
++getCustomer(): Customer
++setCustomer(Customer customer): void
++getDueDate(): Date
++setDueDate(String date): void
++getFine(): double
++setFine(): void
++toString(): String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>890</x>
+      <y>20</y>
+      <w>290</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>assignment3_Jianchuan_Li::Book
+--
+-id: int
+-title: String
+-author: String
+--
++Book(): ctor
++Book(int id, String title, String author): ctor
++getBookId(): int
++setBookId(int id): void
++getTitle(): String
++setTitle(String title): void
++getAuthor(): String
++setAuthor(String author): void
++equals(Book book): boolean
++toString(): String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>880</x>
+      <y>690</y>
+      <w>340</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>assignment3_Jianchuan_Li::Customer
+--
+-id: int
+-name: String
+-address: String
+--
++Customer(): ctor
++Customer(int id, String name, String address): ctor
++getCustomerId(): int
++setCustomerId(int id): void
++getName(): String
++setName(String name): void
++getAddress(): String
++setAddress(String address): void
++equals(Customer customer): boolean
++toString(): String
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>410</x>
+      <y>750</y>
+      <w>370</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>assignment3_Jianchuan_Li::DataCreator
+--
+--
++outputData(Collection&lt;E&gt; l): void
++createBook(ArrayList&lt;Book&gt; b, int num): void
++createCustomer(ArrayList&lt;Customer&gt; c, int num): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>760</y>
+      <w>300</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>assignment3_Jianchuan_Li::LibraryLauncher
+--
+--
++main(String[] args): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>700</x>
+      <y>150</y>
+      <w>210</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;190.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>700</x>
+      <y>540</y>
+      <w>200</w>
+      <h>320</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;180.0;300.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>140</x>
+      <y>610</y>
+      <w>30</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>310</x>
+      <y>780</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>700</x>
+      <y>460</y>
+      <w>190</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>930</x>
+      <y>290</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1000</x>
+      <y>630</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
